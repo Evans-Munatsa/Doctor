@@ -1,12 +1,9 @@
 <h1>Listing posts</h1>
-
-
 <% @posts.each do |post| %>
-<div class="row">
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
-      <h4>title: <%= post.title %></h4>
-      <h4>description: <%= post.description %></h4>
+<div class="container">
+  <div class="row">
+    <h4>title: <%= post.title %></h4>
+    <p>description: <%= post.description %><p>
       <button><%= link_to 'Show', post_path(post) %></button>
       <button><%= link_to 'Edit', edit_post_path(post) %></button>
       <button><%= link_to 'Destroy', post_path(post),
@@ -14,5 +11,4 @@
       data: { confirm: 'Are you sure?' } %></button>
     </div>
   </div>
-</div>
-<% end %>
+  <% end %>
