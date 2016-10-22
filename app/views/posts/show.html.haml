@@ -1,0 +1,19 @@
+.container
+  .row
+    %h4
+      = @post.title
+    %p
+      = @post.description
+  %h4 Comments
+  - @post.comments.each do |comment|
+    %p
+      %strong Comment:
+      = comment.body
+  %h4 Add a comment:
+
+  = simple_form_for([@post, @post.comments.build]) do |f|
+
+    .form-inputs
+      = f.input :body, as: :text
+    .form-actions
+    = f.button :submit, "submit"
